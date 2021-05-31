@@ -124,13 +124,13 @@ class Character extends FlxSprite
 
 			case 'dad':
 				// DAD ANIMATION LOADING CODE
-				tex = Paths.getSparrowAtlas('characters/DADDY_DEAREST');
+				tex = Paths.getSparrowAtlas('characters/shi');
 				frames = tex;
-				animation.addByPrefix('idle', 'Dad idle dance', 24);
-				animation.addByPrefix('singUP', 'Dad Sing Note UP', 24);
-				animation.addByPrefix('singRIGHT', 'Dad Sing Note RIGHT', 24);
-				animation.addByPrefix('singDOWN', 'Dad Sing Note DOWN', 24);
-				animation.addByPrefix('singLEFT', 'Dad Sing Note LEFT', 24);
+				animation.addByPrefix('idle', 'Idle0', 24);
+				animation.addByPrefix('singUP', 'Sing Up0', 24);
+				animation.addByPrefix('singRIGHT', 'Sing Right0', 24);
+				animation.addByPrefix('singDOWN', 'Sing Down0', 24);
+				animation.addByPrefix('singLEFT', 'Sing Left0', 24);
 
 				addOffset('idle');
 				addOffset("singUP", -6, 50);
@@ -495,6 +495,29 @@ class Character extends FlxSprite
 				addOffset("singDOWN-alt", -30, -27);
 
 				playAnim('idle');
+
+				antialiasing = false;
+
+				case 'shi':
+				frames = Paths.getPackerAtlas('characters/shi');
+				animation.addByPrefix('Idle', "Idle", 24, false);
+				animation.addByPrefix('Sing Up', "Sing Up", 24, false);
+				animation.addByPrefix('Sing Right', "Sing Right", 24, false);
+				animation.addByPrefix('Sing Left', "Sing Left", 24, false);
+				animation.addByPrefix('Sing Down', "Sing Down", 24, false);
+
+				addOffset('idle', -220, -280);
+				addOffset('singUP', -220, -240);
+				addOffset("singRIGHT", -220, -280);
+				addOffset("singLEFT", -200, -280);
+				addOffset("singDOWN", 170, 110);
+
+				setGraphicSize(Std.int(width * 6));
+				updateHitbox();
+
+				playAnim('idle');
+
+				antialiasing = false;
 		}
 
 		dance();
